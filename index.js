@@ -14,23 +14,3 @@ form.addEventListener('submit', (e) => {
   }
 });
 
-function uploadFile() {
-    var fileInput = document.getElementById("myFile");
-    var file = fileInput.files[0];
-    var formData = new FormData();
-    formData.append("file", file);
-  
-    // Replace "upload.php" with the URL of your upload script
-    fetch("main.php", {
-      method: "POST",
-      body: formData
-    })
-    .then(response => response.text())
-    .then(result => {
-      console.log(result);
-    })
-    .catch(error => {
-      console.error(error);
-    });
-  }
-  
